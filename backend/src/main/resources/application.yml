@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: pruefprot
+  # Defaults match docker-compose.dev.yml; the production stack overrides them via environment variables
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pruefprot
+    username: pruefprot
+    password: pruefprot
+  jpa:
+    open-in-view: false
+    hibernate:
+      # The schema is owned by Flyway; Hibernate only checks that the entities match it
+      ddl-auto: validate
+  servlet:
+    multipart:
+      # Must stay above pruefprot.upload.max-size so that the app (not Spring) enforces the limit
+      max-file-size: 12MB
+      max-request-size: 12MB
+  mvc:
+    problemdetails:
+      enabled: true
+
+server:
+  servlet:
+    context-path: /api
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+logging:
+  file:
+    # Relative to the working directory: with `./gradlew :backend:bootRun` this is backend/build/server/logs/.
+    # The Docker image sets PRUEFPROT_LOG_FILE=/app/logs/server-log (volume backend-logs).
+    name: ${PRUEFPROT_LOG_FILE:build/server/logs/server-log}
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
+      max-history: 14
+      total-size-cap: 200MB
+
+pruefprot:
+  upload:
+    max-size: 10MB

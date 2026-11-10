@@ -1,0 +1,10 @@
+# Build context of backend/Dockerfile is the repository root; only Gradle files and backend sources are needed
+**/build
+**/.gradle
+**/node_modules
+frontend/dist
+.git
+.idea
+.vscode
+.env
+*.md
