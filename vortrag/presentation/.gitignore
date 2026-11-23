@@ -1,0 +1,6 @@
+node_modules/
+dist/
+export/
+*.pdf
+.slidev/
+components.d.ts

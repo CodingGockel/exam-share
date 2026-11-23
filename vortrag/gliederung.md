@@ -12,7 +12,7 @@ Legende: ohne Markierung = eigene Themen, 💡 = Vorschlag zur Ergänzung, ❓ =
 Jedes Thema folgt demselben Schema, damit der Vortrag einheitlich wirkt:
 
 1. **Was ist das, und wozu dient es?** Allgemein und ohne KI erklärt
-2. **Klassisches Vorgehen:** typische Tools und Methoden
+2. **Klassisches Vorgehen:** typische Tools und Methode
 3. **KI-Einsatz:** Demo-Video an Prüfprot
 4. **Vor- und Nachteile:** Was kann die KI gut, wo liegen die Grenzen, welche Besonderheiten gibt es?
 5. **Skill-Sammlung:** Was wir aus dem Thema als Skill festhalten (siehe 2.2)

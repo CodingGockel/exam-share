@@ -1,0 +1,20 @@
+{
+  "name": "pruefprot-vortrag",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build",
+    "export": "slidev export --output vortrag.pdf",
+    "export:png": "slidev export --format png --output export/slides"
+  },
+  "dependencies": {
+    "@fontsource-variable/roboto-condensed": "5.3.0",
+    "@fontsource-variable/roboto-serif": "5.3.0",
+    "@fontsource/roboto-mono": "5.3.0",
+    "@iconify-json/carbon": "1.2.30",
+    "@iconify-json/logos": "1.2.20",
+    "@slidev/cli": "53.1.0",
+    "playwright-chromium": "1.64.0"
+  }
+}

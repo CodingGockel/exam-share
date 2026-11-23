@@ -1,0 +1,180 @@
+/*
+ * Theme nach der Uni-Vorlage (vorlage.pptx):
+ * Farben aus dem Farbschema "Universität", Schriften Roboto Serif (Überschriften)
+ * und Roboto Condensed (Text). Schriften lokal über @fontsource, damit der
+ * Vortrag ohne Internet funktioniert.
+ */
+@import '@fontsource-variable/roboto-serif';
+@import '@fontsource-variable/roboto-condensed';
+@import '@fontsource/roboto-mono/400.css';
+@import '@fontsource/roboto-mono/700.css';
+
+:root {
+  --uni-navy: #002f5d;
+  --uni-navy-80: rgba(0, 47, 93, 0.8);
+  --uni-gold: #ae9a63;
+  --uni-blue: #7682a5;
+  --uni-blue-light: #8e98b7;
+  --uni-blue-pale: #a8afc8;
+  --uni-gray: #f2f2f2;
+  --uni-gray-mid: #d9d9d9;
+  --uni-text-muted: #5a6b80;
+
+  /* Signalfarben für Grafiken (aus dem Farbstreifen der Vorlage) */
+  --ok: #4f9a3c;
+  --ok-bg: #e7f2e3;
+  --bad: #c8282d;
+  --bad-bg: #f9e3e3;
+  --warn: #e0951d;
+  --warn-bg: #fcf0db;
+  --info: #1b7a8c;
+  --info-bg: #dff0f3;
+
+  --font-serif: 'Roboto Serif Variable', 'Roboto Serif', Georgia, serif;
+  --font-sans: 'Roboto Condensed Variable', 'Roboto Condensed', 'Arial Narrow', sans-serif;
+  --font-mono: 'Roboto Mono', ui-monospace, monospace;
+
+  --slidev-theme-primary: var(--uni-navy);
+  --slidev-code-font-family: var(--font-mono);
+  --slidev-code-font-size: 13px;
+  --slidev-code-line-height: 1.45;
+  --slidev-code-radius: 6px;
+  --slidev-code-padding: 10px 14px;
+  --slidev-code-background: #f5f6f9;
+}
+
+.slidev-layout {
+  font-family: var(--font-sans);
+  color: var(--uni-navy);
+  font-size: 20px;
+  line-height: 1.4;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: #fff;
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3 {
+  font-family: var(--font-serif);
+  color: var(--uni-navy);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.slidev-layout h2 { font-size: 24px; margin-bottom: 8px; }
+.slidev-layout h3 { font-size: 19px; margin-bottom: 6px; }
+
+.slidev-layout p { margin: 6px 0; }
+.slidev-layout strong { font-weight: 700; }
+.slidev-layout em { color: var(--uni-blue); }
+.slidev-layout a { color: var(--uni-navy); text-decoration: underline; }
+
+/* Aufzählungen wie in der Vorlage: Punkte in Gold */
+.slidev-layout ul { list-style: none; padding-left: 0; margin: 4px 0; }
+.slidev-layout ul > li { position: relative; padding-left: 20px; margin: 4px 0; }
+.slidev-layout ul > li::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 0.58em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--uni-gold);
+}
+.slidev-layout ul ul > li { font-size: 0.88em; margin: 2px 0; }
+.slidev-layout ul ul > li::before { background: var(--uni-blue-light); width: 6px; height: 6px; }
+.slidev-layout ol { padding-left: 22px; list-style: decimal; }
+.slidev-layout ol > li::marker { color: var(--uni-gold); font-weight: 700; }
+
+.slidev-layout code:not(pre code) {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: #eef0f5;
+  padding: 1px 5px;
+  border-radius: 4px;
+  color: var(--uni-navy);
+}
+
+/* Code kleiner auf einer Folie: <div class="code-sm"> bzw. "code-xs" um den Codeblock */
+.code-sm { --slidev-code-font-size: 11.5px; --slidev-code-line-height: 1.4; }
+.code-xs { --slidev-code-font-size: 10.5px; --slidev-code-line-height: 1.35; }
+
+/* Kompakte Tabellen: <div class="compact"> um die Tabelle */
+.compact table { font-size: 14px; }
+.compact th, .compact td { padding: 3px 8px; }
+
+/* Tabellen */
+.slidev-layout table { border-collapse: collapse; width: 100%; font-size: 16px; }
+.slidev-layout th {
+  background: var(--uni-navy);
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+  padding: 5px 10px;
+}
+.slidev-layout td { padding: 5px 10px; border-bottom: 1px solid var(--uni-gray-mid); }
+.slidev-layout tr:nth-child(even) td { background: #f7f8fa; }
+
+/* Kleine Hilfsklassen für Folieninhalte */
+.muted { color: var(--uni-text-muted); }
+.small { font-size: 15px; line-height: 1.35; }
+.tiny { font-size: 12px; line-height: 1.3; }
+span.small, span.tiny { display: inline-block; }
+.gold { color: var(--uni-gold); }
+.ok { color: var(--ok); }
+.bad { color: var(--bad); }
+.warn { color: var(--warn); }
+
+.card {
+  background: var(--uni-gray);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+.card-white {
+  background: #fff;
+  border: 1px solid var(--uni-gray-mid);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+.card h3, .card-white h3 { margin-top: 0; }
+
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--uni-navy);
+  color: #fff;
+  font-size: 20px;
+  flex: none;
+}
+.icon-circle.gold { background: var(--uni-gold); color: #fff; }
+.icon-circle.light { background: #e3e7f0; color: var(--uni-navy); }
+
+.takeaway {
+  border-radius: 8px;
+  background: var(--uni-navy);
+  color: #fff;
+  padding: 10px 16px;
+  font-size: 18px;
+}
+.takeaway strong { color: #f0dfaa; }
+
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 1px 8px;
+  border-radius: 10px;
+  background: #e3e7f0;
+  color: var(--uni-navy);
+  letter-spacing: 0.02em;
+}
+.tag.ok { background: var(--ok-bg); color: var(--ok); }
+.tag.bad { background: var(--bad-bg); color: var(--bad); }
+.tag.warn { background: var(--warn-bg); color: #9a6410; }
